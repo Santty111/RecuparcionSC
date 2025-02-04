@@ -3,13 +3,16 @@
     x:Class="RecuparcionSC.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:RecuparcionSC"
+    xmlns:views="clr-namespace:RecuperacionSC.Views;assembly=RecuperacionSC"
     Shell.FlyoutBehavior="Disabled"
-    Title="RecuparcionSC">
+    Title="RecuperacionSC">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!-- Definir las pestañas de navegación -->
+    <TabBar>
+
+        <!-- Pestaña para la página principal -->
+        <ShellContent Title="Inicio"
+                      ContentTemplate="{DataTemplate views:ListaPersonajesPage}" />
+    </TabBar>
 
 </Shell>

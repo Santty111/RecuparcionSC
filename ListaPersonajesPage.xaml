@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:RecuperacionSC.ViewModel"
+             x:Class="RecuperacionSC.Views.ListaPersonajesPage">
+
+    <ContentPage.BindingContext>
+        <vm:CharacterViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <SearchBar Placeholder="Buscar personaje..." Text="{Binding SearchText}" />
+
+        <CollectionView ItemsSource="{Binding Characters}" SelectionMode="Single"
+                        SelectionChanged="OnCharacterSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding Name}" FontSize="18" />
+                        <Label Text="{Binding Race}" FontSize="14" />
+                        <Label Text="{Binding Gender}" FontSize="14" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
